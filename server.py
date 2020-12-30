@@ -49,4 +49,4 @@ def dir_expand(syspath):
 
 
 if __name__ == '__main__':
-    app.run(host='filmex.lan', debug=True, port=8888)
+    app.run(host='filmex.lan', debug=True, port=80)
