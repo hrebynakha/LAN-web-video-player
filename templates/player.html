@@ -1,74 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>cinema</title>
-<link rel="stylesheet" href="/static/style/DPlayer.min.css">
-<link rel="stylesheet" type="text/css" href="/static/style/demo.css">
-<style>
-    body {
-      text-rendering: auto;
-    }
+  <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
 
-    
-  </style>
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
 </head>
 
 <body>
+  <video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="1200"
+    height="720"
+    poster="https://cdn.betterttv.net/emote/54fa8f1401e468494b85b537/1x"
+    data-setup="{}"
+  >
+    <source src='{{video_path}}' type="video/mp4" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
 
-<div class="container">
-    <div class="row main" id='back'>
-        <div class="col-md-12">
-            <h2 class="top_title">
-                <span class="glyphicon glyphicon-menu-left" aria-hidden="true">
-                </span>
-                Local Cinema
-            </h2>
-            <div class="container" style="width: 70%; height: 100%; margin: 70px auto">
-                <div class="light" style="margin-right: 10px">
-
-                    <img class="lamb" src="/static/icon/lamb.png" onclick="document.getElementById('back').style.background='#fff'">
-                    <img class="lamb" style="margin-top: 10px" src="/static/icon/off.png" onclick="document.getElementById('back').style.background='#959595db'">
-
-                </div>
-                
-                <div id="dplayer" style="z-index: 10">
-                    
-                </div> 
-            </div>
-        </div>
-    </div>
-</div>
-
-<script src="/static/js/DPlayer.min.js"></script>
-<script src="/static/js/docsearch.js"></script>
-<!-- <script src="/static/js/evanyou.min.js"></script>
- --><script src="/static/js/docute.js"></script>
-<script src="/static/js/config.js"></script>
-
-<script>
-
-
-const dp = new DPlayer({
-    container: document.getElementById('dplayer'),
-    autopaly:true,
-    lang:'zh-cn',
-    preload:'auto',
-    screenshot: false,
-    video: {
-        url: '{{video_path}}',
-        type: 'auto'
-    }
-    // subtitle: {
-    //     url: 'webvtt.vtt'
-    // },
-    // danmaku: {
-    //     id: 'demo',
-    //     api: 'https://api.prprpr.me/dplayer/'
-    // }
-});
-</script>
+  <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
 </body>
-</html>
